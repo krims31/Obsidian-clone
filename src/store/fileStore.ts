@@ -17,20 +17,20 @@ interface FileStore {
   deleteFile: (path: string) => Promise<void>;
 }
 
-export const useFileStore = create<FileStore>((set, get) => ({
+export const useFileStore = create<FileStore>((set: any, get: any) => ({
   files: [],
   currentFile: null,
   recentFiles: [],
   isLoading: false,
 
-  setFiles: (files) => set({ files }),
-  setCurrentFile: (file) => set({ currentFile: file }),
+  setFiles: (files: any) => set({ files }),
+  setCurrentFile: (file: any) => set({ currentFile: file }),
 
-  addRecentFile: (file) =>
-    set((state) => ({
+  addRecentFile: (file: any) =>
+    set((state: any) => ({
       recentFiles: [
         file,
-        ...state.recentFiles.filter((f) => f.id !== file.id),
+        ...state.recentFiles.filter((f: any) => f.id !== file.id),
       ].slice(0, 10),
     })),
 
