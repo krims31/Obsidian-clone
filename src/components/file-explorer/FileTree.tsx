@@ -55,7 +55,7 @@ interface FileTreeProps {
 }
 
 export const FileTree: React.FC<FileTreeProps> = ({ files }) => {
-  const [setCurrentFile, refreshFileTree] = useFileStore();
+  const { setCurrentFile, refreshFileTree, files: storeFiles } = useFileStore();
 
   const fileList = files || useFileStore((state: any) => state.files);
 
