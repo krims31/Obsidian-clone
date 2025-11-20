@@ -1,0 +1,15 @@
+{
+  "name": "obsidian-clone-electron",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "tsc && electron dist/main.js",
+    "build": "tsc",
+    "package": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
