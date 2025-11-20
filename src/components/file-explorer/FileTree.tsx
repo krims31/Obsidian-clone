@@ -1,31 +1,34 @@
 import React from "react";
-import styled from "styled-components";
-import { FileSystemItem } from "../types";
+import styled, { StyledComponent } from "styled-components";
+import { FileSystemItem } from "../../types";
 import { useFileStore } from "../../store/fileStore";
 
-const TreeContainer = styled.div`
+const TreeContainer: StyledComponent<"div", any, {}, never> = styled.div`
   padding: 8px 0;
 `;
 
-const TreeNode = styled.div<{ level: number }>`
-  padding-left: ${(props: any) => props.level * 16}px;
-  padding-right: 8px;
-  cursor: pointer;
-  user-select: none;
+const TreeNode: StyledComponent<"div", any, { level: number }, never> =
+  styled.div<{
+    level: number;
+  }>`
+    padding-left: ${(props: any): number => props.level * 16}px;
+    padding-right: 8px;
+    cursor: pointer;
+    user-select: none;
 
-  &:hover {
-    background-color: #f0f0f0;
-  }
-`;
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  `;
 
-const NodeContent = styled.div`
+const NodeContent: StyledComponent<"div", any, {}, never> = styled.div`
   display: flex;
   align-items: center;
   padding: 4px 8px;
   border-radius: 4px;
 `;
 
-const ExpandIcon = styled.div`
+const ExpandIcon: StyledComponent<"div", any, {}, never> = styled.div`
   width: 16px;
   height: 16px;
   align-items: center;
@@ -35,14 +38,14 @@ const ExpandIcon = styled.div`
   background-color: #ccc;
 `;
 
-const FileIcon = styled.div`
+const FileIcon: StyledComponent<"div", any, {}, never> = styled.div`
   width: 16px;
   height: 16px;
   margin-right: 8px;
   color: #6c757d;
 `;
 
-const FileName = styled.span`
+const FileName: StyledComponent<"span", any, {}, never> = styled.span`
   font-size: 14px;
   color: #333;
 `;
@@ -54,10 +57,10 @@ interface FileTreeProps {
 export const FileTree: React.FC<FileTreeProps> = ({ files }) => {
   const [setCurrentFile, refreshFileTree] = useFileStore();
 
-  const fileList = files || useFileStore((state) => state.files);
+  const fileList = files || useFileStore((state: any) => state.files);
 
   const renderTreeNode = (node: FileSystemItem, level: number = 0) => {
-    const isDirectory = node.type === "directory";
+    const isDirectory: boolean = node.type === "directory";
 
     return (
       <div key={node.id}>
@@ -107,7 +110,7 @@ export const FileTree: React.FC<FileTreeProps> = ({ files }) => {
 
   return (
     <TreeContainer>
-      {fileList.map((file) => renderTreeNode(file))}
+      {fileList.map((file: any) => renderTreeNode(file))}
     </TreeContainer>
   );
 };

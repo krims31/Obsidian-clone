@@ -1,8 +1,8 @@
 import "./index.css";
-import styled from "styled-components";
-import { FileTree } from "./components/FileTree";
-import { EditorPane } from "./components/EditorPane";
-import { useFileStore } from "./stores/fileStore";
+import styled, { StyledComponent } from "styled-components";
+import { FileTree } from "./components/file-explorer/FileTree";
+import { EditorPane } from "./components/editor/EditorPane";
+import { useFileStore } from "./store/fileStore";
 
 const AppContainer = styled.div`
   display: flex;
