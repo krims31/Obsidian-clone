@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Simple Obsidian clone",
   "main": "dist/main.js",
-  "type": "module",
   "scripts": {
     "dev": "npm run build && electron dist/main.js",
     "build": "tsc",
