@@ -2,6 +2,8 @@ import { app, BrowserWindow, ipcMain, shell } from "electron";
 import * as fs from "fs/promises";
 import * as path from "path";
 
+const isDev = process.env.NODE_ENV === "development";
+
 class App {
   private mainWindow: BrowserWindow;
   constructor() {
@@ -39,7 +41,7 @@ class App {
       show: false,
     });
 
-    if (process.env.NODE_ENV === "development") {
+    if (isDev) {
       this.mainWindow.loadURL("http://localhost:3000");
       this.mainWindow.webContents.openDevTools();
     } else {
