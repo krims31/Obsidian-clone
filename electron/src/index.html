@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Obsidian Clone - WORKING!</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background: #2c3e50;
+                color: white;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                text-align: center;
+                background: #34495e;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            }
+            h1 {
+                color: #1abc9c;
+                margin-bottom: 20px;
+            }
+            .success {
+                color: #2ecc71;
+                font-size: 24px;
+                margin: 20px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🎉 ELECTRON РАБОТАЕТ!</h1>
+            <div class="success">✅ Ошибка CSS исправлена!</div>
+            <p>Теперь можно добавлять React</p>
+            <button
+                onclick="alert('Привет из Electron!')"
+                style="
+                    padding: 10px 20px;
+                    margin: 10px;
+                    background: #1abc9c;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                "
+            >
+                Нажми меня
+            </button>
+        </div>
+
+        <script>
+            console.log("Electron успешно запущен!");
+        </script>
+    </body>
+</html>

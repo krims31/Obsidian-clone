@@ -1,32 +1,21 @@
 {
-  "name": "obsidian-clone-simple",
+  "name": "obsidian-clone",
   "version": "1.0.0",
-  "description": "Simple Obsidian clone",
   "main": "dist/main.js",
   "scripts": {
-    "dev": "npm run build && electron dist/main.js",
+    "dev": "tsc && electron dist/main.js",
     "build": "tsc",
-    "watch": "tsc --watch",
-    "start": "electron dist/main.js",
-    "clean": "rm -rf dist"
+    "start": "electron dist/main.js"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.5",
-    "@types/node": "^20.19.25",
+    "@types/node": "^20.0.0",
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
-    "@types/styled-components": "^5.1.36",
-    "@vitejs/plugin-react": "^5.1.1",
     "electron": "^25.0.0",
-    "typescript": "^5.9.3",
-    "vite": "^7.2.4"
+    "typescript": "^5.0.0"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "zustand": "^5.0.8"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   }
 }
