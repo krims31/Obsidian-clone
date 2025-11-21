@@ -1,34 +1,33 @@
 import React from "react";
-import styled, { StyledComponent } from "styled-components";
+import styled from "styled-components";
 import { FileSystemItem } from "../../types";
 import { useFileStore } from "../../store/fileStore";
 
-const TreeContainer: StyledComponent<"div", any, {}, never> = styled.div`
+const TreeContainer = styled.div`
   padding: 8px 0;
 `;
 
-const TreeNode: StyledComponent<"div", any, { level: number }, never> =
-  styled.div<{
-    level: number;
-  }>`
-    padding-left: ${(props: any): number => props.level * 16}px;
-    padding-right: 8px;
-    cursor: pointer;
-    user-select: none;
+const TreeNode = styled.div<{
+  level: number;
+}>`
+  padding-left: ${(props: any): number => props.level * 16}px;
+  padding-right: 8px;
+  cursor: pointer;
+  user-select: none;
 
-    &:hover {
-      background-color: #f0f0f0;
-    }
-  `;
+  &:hover {
+    background-color: #f0f0f0;
+  }
+`;
 
-const NodeContent: StyledComponent<"div", any, {}, never> = styled.div`
+const NodeContent = styled.div`
   display: flex;
   align-items: center;
   padding: 4px 8px;
   border-radius: 4px;
 `;
 
-const ExpandIcon: StyledComponent<"div", any, {}, never> = styled.div`
+const ExpandIcon = styled.div`
   width: 16px;
   height: 16px;
   align-items: center;
@@ -38,14 +37,14 @@ const ExpandIcon: StyledComponent<"div", any, {}, never> = styled.div`
   background-color: #ccc;
 `;
 
-const FileIcon: StyledComponent<"div", any, {}, never> = styled.div`
+const FileIcon = styled.div`
   width: 16px;
   height: 16px;
   margin-right: 8px;
   color: #6c757d;
 `;
 
-const FileName: StyledComponent<"span", any, {}, never> = styled.span`
+const FileName = styled.span`
   font-size: 14px;
   color: #333;
 `;

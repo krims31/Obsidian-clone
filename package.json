@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "dist/main.js",
   "scripts": {
+    "build:react": "node build-react.js",
     "dev": "tsc && electron dist/main.js",
     "build": "tsc",
     "start": "electron dist/main.js"
@@ -11,14 +12,17 @@
     "@types/node": "^20.0.0",
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
+    "@types/styled-components": "^5.1.36",
     "@vitejs/plugin-react": "^5.1.1",
     "electron": "^25.0.0",
+    "esbuild": "^0.27.0",
     "typescript": "^5.0.0",
     "vite": "^7.2.4"
   },
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "styled-components": "^6.1.19",
     "zustand": "^5.0.8"
   }
 }

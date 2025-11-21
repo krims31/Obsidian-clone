@@ -1,39 +1,40 @@
 import React from "react";
 import styled from "styled-components";
-import { FileTree } from "./components/file-explorer/FileTree";
-import { EditorPane } from "./components/editor/EditorPane";
-import { useFileStore } from "./store/fileStore";
+import { ObsidianSidebar } from "./components/layout/Sidebar";
 
-// 🔧 Убрали StyledComponent типы - они не нужны
 const AppContainer = styled.div`
   display: flex;
   height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-`;
-
-const Sidebar = styled.div`
-  width: 300px;
-  background: #f8f9fa;
-  border-right: 1px solid #e9ecef;
-  overflow-y: auto;
+  background: #1e1e1e;
 `;
 
 const MainContent = styled.div`
   flex: 1;
-  background: white;
+  background: #1e1e1e;
+  padding: 20px;
+  color: #dcdcdc;
 `;
 
 function App() {
-  const { files } = useFileStore();
-
   return (
     <AppContainer>
-      <Sidebar>
-        <h2 style={{ padding: "16px", margin: "0px" }}>File Explorer</h2>
-        <FileTree files={files} />
-      </Sidebar>
+      <ObsidianSidebar />
       <MainContent>
-        <EditorPane />
+        <h1>Welcome to Obsidian Clone</h1>
+        <p>Your sidebar is working! 🚀</p>
+        <textarea
+          style={{
+            width: "100%",
+            height: "200px",
+            background: "#2d2d2d",
+            border: "1px solid #404040",
+            color: "#dcdcdc",
+            padding: "12px",
+            borderRadius: "4px",
+            fontFamily: "monospace",
+          }}
+          placeholder="Start writing your markdown..."
+        />
       </MainContent>
     </AppContainer>
   );
